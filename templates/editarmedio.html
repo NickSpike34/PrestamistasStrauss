@@ -1,0 +1,36 @@
+<!Doctypehtml>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prestamistas Strauss</title>
+    <link rel="shortcut icon" href="/static/Imagenes/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos2.css">
+    </head>
+    <body>
+           <header>
+                </div>
+            <nav>
+            <ul>
+                <li><a href="/">Regresar</a></li>
+
+            </ul>
+            </nav>
+            </header>
+           <section class="main">
+                <section class="articles">
+
+<form action="/editar_medio/{{comentar.0}}" method="post">
+   <div class="container">
+          <div class="form-row">
+               <div class="col-xs-12 ">
+                <div class="mb-3">
+                      <label for="descripcionmedio" class="form-label">Descripcion</label>
+                      <input type="text" class="form-control" name="descripcionmedio" id="descripcionmedio" placeholder="Descripcion" value="{{comentar.1}}">
+                </div>
+                </div>
+          </div>
+    </div>
+          <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+
+

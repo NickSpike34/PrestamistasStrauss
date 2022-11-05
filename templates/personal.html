@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block content %}
+            <section class="main">
+                <section class="articles">
+                    <article>
+                        <center><h2>Nuestro personal</h2></center>
+                        <br>    
+                        <center><h1>Fundador</h1></center>
+                        <center><h1>Leopold Strauss</h1></center>
+                        <br>
+                        <center><img src="/static/Imagenes/personal1.jpg" alt="" width="200" height="200"></center> 
+                        <br>
+                        <center><h1>Abogado de la empresa</h1></center>
+                        <center><h1>Saul Goodman</h1></center>
+                        <br>
+                        <center><img src="/static/Imagenes/personal2.jpg" alt="" width="200" height="200" onclick="mostrar2(); sound2.play(); this.onclick=null;"></center>   
+                        <br>
+                        <style>
+                            #img2{
+                                display: none;
+                                animation: desaparecer 3s linear 14s both;
+                                animation: desaparecer 3s linear 14s both;
+                            }
+                            @keyframes desaparecer {
+                            0% {
+                                opacity: 1;
+                            }
+                            100% {
+                                opacity: 0;
+                            }
+                            }
+                            @keyframes desaparecer {
+                            0% {
+                                opacity: 1;
+                            }
+                            100% {
+                                opacity: 0;
+                            }
+                            }
+                                
+    
+                           </style>
+                           <div id="img2">
+                            <center><img src="/static/Imagenes/eg2.gif" width="400px" alt=""></center>
+                           </div>
+    
+                           <script>
+                            function mostrar2(){
+                                document.getElementById('img2').style.display = 'block';
+                            }
+                        </script>
+                        <script type="text/javascript">
+                            const sound2 = new Audio();
+                            sound2.src= "/static/js/eg2.mp3";
+                        </script>
+                        <center><h1>Publisher de la empresa</h1></center>
+                        <center><h1>Alva Majo</h1></center>
+                        <br>
+                        <center><img src="/static/Imagenes/personal3.jpg" alt="" width="200" height="200" onclick="mostrar(); sound.play(); this.onclick=null;"></center>
+                        <br>
+                        <!--Easter Egg-->
+                       <style>
+                        #img{
+                            display: none;
+                            animation: desaparecer 6s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+	                        animation: desaparecer 6s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+                        }
+                        @keyframes desaparecer {
+                        0% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 0;
+                        }
+                        }
+                        @keyframes desaparecer {
+                        0% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 0;
+                        }
+                        }
+
+
+                       </style>
+                       <div id="img">
+                        <center><img src="/static/Imagenes/eg1.gif" width="400px" alt=""></center>
+                       </div>
+
+                       <script>
+                        function mostrar(){
+                            document.getElementById('img').style.display = 'block';
+                        }
+                    </script>
+                    <script type="text/javascript">
+                        const sound = new Audio();
+                        sound.src= "/static/js/eg1.mp3";
+                    </script>
+                        <center><h2>En busca de mas personal</h2></center> 
+                       </p>
+                       
+                    </article>
+                </section>
+            
+            </section>
+            <footer>
+                <p>© 2022 Cetis 155 Informatica Todos los derechos reservados.</p>
+            </footer>
+        </body>
+        {% endblock %}
+</html>

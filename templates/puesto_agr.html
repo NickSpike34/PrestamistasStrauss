@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<br>
+<section class="main">
+    <section class="articles">
+        <article>
+<div class="container">
+<h3>
+<CENTER> <b> Agregar Puesto </b> </CENTER>
+</h3>
+<br>
+<center><div class="col-md-8"></div></center>
+<form class="row g-3" action="/puesto_fagrega" method="post">
+<div class="col-md-6">
+<label for="codPuesto" class="form-label">Código de Puesto</label>
+<input type="text" class="form-control" name="codPuesto" id="codPuesto" required></input>
+</div>
+<div class="col-md-6">
+<label for="idarea" class="form-label">Área de adscripción</label>
+<select name="idarea" id="idarea" class = "form-select" >
+<option selected>Elige...</option>
+
+{% for i in catarea %}
+<option value="{{i.0}}">{{i.1}}</option>
+{% endfor %}
+</select>
+</div>
+<div class="col-md-12">
+<label for="nomPuesto" class="form-label">Nombre del Puesto</label>
+<input type="text" class="form-control" name="nomPuesto" id="nomPuesto" required></input>
+</div>
+<div class="col-md-12">
+<label for="puestoJefeSup" class="form-label">Puesto del Jefe Superior</label>
+<input type="text" class="form-control" name="puestoJefeSup" id="puestoJefeSup" required></input>
+</div>
+<div class="col-md-8">
+<label for="jornada" class="form-label">Jornada</label>
+<input type="text" class="form-control" name="jornada" id="jornada" required></input>
+</div>
+<div class="col-md-4">
+<label for="remunMensual" class="form-label">Remuneración Mensual</label>
+<input type="text" class="form-control" name="remunMensual" id="remunMensual" required></input>
+</div>
+<div class="col-md-12">
+<label for="prestaciones" class="form-label">Prestaciones</label>
+<input type="text" class="form-control" name="prestaciones" id="prestaciones" required></input>
+</div>
+<div class="col-md-12">
+<label for="descripcionGeneral" class="form-label">Descripción General</label>
+<input type="text" class="form-control" name="descripcionGeneral" id="descripcionGeneral" required></input>
+</div>
+<div class="col-md-12">
+<label for="funciones" class="form-label">Funciones</label>
+<input type="text" class="form-control" name="funciones" id="funciones" required></input>
+</div>
+<div class="col-md-4">
+<label for="edad" class="form-label">Edad</label>
+<input type="text" class="form-control" name="edad" id="edad" required></input>
+</div>
+<div class="col-md-4">
+<label for="sexo" class="form-label">Sexo</label>
+<select name="sexo" id="sexo" class = "form-select">
+<option value="Indistinto" selected>Elige...</option>
+<option value="Hombre">Hombre</option>
+<option value="Mujer">Mujer</option>
+<option value="Indistinto">Indistinto</option>
+</select>
+</div>
+
+<div class="col-md-4">
+<label for="idestadocivil" class="form-label">Estado Civil</label>
+<select name="idestadocivil" id="idestadocivil" class = "form-select">
+<option selected>Elige...</option>
+{% for i in catEdoCivil %}
+<option value="{{i.0}}">{{i.1}}</option>
+{% endfor %}
+</select>
+</div>
+<div class="col-md-4">
+<label for="idescolaridad" class="form-label">escolaridad</label>
+<select name="idescolaridad" id="idescolaridad" class = "form-select" onChange="miFunc1()">
+<option selected="true" disabled="disabled">Elige...</option>
+{% for i in catescolaridad %}
+<option value="{{i.0}}">{{i.1}}</option>
+{% endfor %}
+</select>
+<script>
+function miFunc1(){
+var esco = document.getElementById('idescolaridad').value;
+if (esco == 1)
+{document.getElementById('idgrado').disabled=true;
+document.getElementById('idcarrera').disabled=true;}
+else
+{document.getElementById('idgrado').disabled=false;
+document.getElementById('idcarrera').disabled=false;}
+}
+</script>
+</div>
+<div class="col-md-4">
+<label for="idgrado" class="form-label">Grado Avance</label>
+<select name="idgrado" id="idgrado" class = "form-select">
+<option selected="true" disabled="disabled">Elige...</option>
+{% for i in catgrado %}
+<option value="{{i.0}}">{{i.1}}</option>
+{% endfor %}
+</select>
+</div>
+<div class="col-md-4">
+<label for="idcarrera" class="form-label">Carrera / Especialidad</label>
+<select name="idcarrera" id="idcarrera" class = "form-select">
+<option selected="true" disabled="disabled">Elige...</option>
+{% for i in catcarrera %}
+<option value="{{i.0}}">{{i.1}}</option>
+{% endfor %}
+</select>
+</div>
+<div class="col-md-12">
+<label for="experiencia" class="form-label">Experiencia</label>
+<input type="text" class="form-control" name="experiencia" id="experiencia"required></input>
+</div>
+<div class="col-md-12">
+<label for="conocimientos" class="form-label">Conocimientos</label>
+<input type="text" class="form-control" name="conocimientos" id="conocimientos"required></input>
+</div>
+<div class="col-md-12">
+<label for="manejoEquipo" class="form-label">ManejoEquipo</label>
+<input type="text" class="form-control" name="manejoEquipo" id="manejoEquipo"required></input>
+</div>
+<div class="col-md-12">
+<label for="reqFisicos" class="form-label">Requisitos Físicos</label>
+<input type="text" class="form-control" name="reqFisicos" id="reqFisicos"required></input>
+</div>
+<div class="col-md-12">
+<label for="reqPsicologicos" class="form-label">Requisitos Psicológicos</label>
+<input type="text" class="form-control" name="reqPsicologicos" id="reqPsicologicos"required></input>
+</div>
+<div class="col-md-12">
+<label for="responsabilidades" class="form-label">Responsabilidades</label>
+<input type="text" class="form-control" name="responsabilidades" id="responsabilidades"required></input>
+</div>
+<div class="col-md-12">
+<label for="condicionesTrabajo" class="form-label">Condiciones de Trabajo</label>
+<input type="text" class="form-control" name="condicionesTrabajo" id="condicionesTrabajo"required></input>
+</div>
+<div class="col-6">
+        <span>Idiomas:</span>
+        <div class="form-check" >
+        <input class="form-check-input" type="checkbox" value="" name = "i1" id="i1"  onChange="miFunc2()">
+        <label class="form-check-label" for="i1">NO REQUERIDO</label>
+        </div>
+{% for idio in catidioma
+ if (idio.0)>1: %}
+        <div class="form-check" >
+        <input class="form-check-input" type="checkbox" value="" name = "i{{idio.0}}" id="i{{idio.0}}" >
+        <label class="form-check-label" for="i{{idio.0}}">
+           {{idio.1}}
+        </label>
+        </div>
+{% endfor %}
+<script>
+function miFunc2(){
+{% for idio in catidioma %}
+var isChecked = document.getElementById('i1').checked;
+ if ( {{idio.0}}>1 && isChecked ) {
+      document.getElementById('i{{idio.0}}').disabled=true;
+      document.getElementById('i{{idio.0}}').checked=false; }
+ else
+     { document.getElementById('i{{idio.0}}').disabled=false;}
+
+{% endfor %}
+}
+</script>
+</div>
+<div class="col-6">
+<span>Habilidades:</span>
+<div class="form-check" >
+<input class="form-check-input" type="checkbox" value="" name = "h1" id="h1"  onChange="miFunc3()">
+<label class="form-check-label" for="h1">NO REQUERIDAS</label>
+</div>
+{% for hab in cathabilidades
+if (hab.0)>1: %}
+<div class="form-check">
+<input class="form-check-input" type="checkbox"  name ="h{{hab.0}}"  id="h{{hab.0}}">
+<label class="form-check-label" for="h{{hab.0}}">
+{{hab.1}}
+</label>
+</div>
+{% endfor %}
+<script>
+function miFunc3(){
+{% for hab in cathabilidades %}
+var isChecked = document.getElementById('h1').checked;
+ if ( {{hab.0}}>1 && isChecked ) {
+      document.getElementById('h{{hab.0}}').disabled=true;
+      document.getElementById('h{{hab.0}}').checked=false; }
+ else
+     { document.getElementById('h{{hab.0}}').disabled=false;}
+
+{% endfor %}
+}
+</script>
+
+</div>
+<div class="col-12">
+<button type="submit" class="btn btn-danger">Enviar</button>
+</div>
+</form>
+</div>
+
+</div>
+        </article>
+        </section>
+        <footer>
+                <p>© 2022 Cetis 155 Informatica Todos los derechos reservados.</p>
+            </footer>
+{% endblock %}

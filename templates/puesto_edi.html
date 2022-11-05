@@ -1,0 +1,232 @@
+{% extends "layout.html" %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<footer>
+   <div class="container">
+
+<h3>
+   <CENTER> <b> Puesto </b> </CENTER>
+
+</h3>
+
+  <br>
+<form class="row g-3"  action="/puesto_fedita/{{dat.0}}" method="post">
+   <div class="col-md-6">
+      <label for="codPuesto" class="form-label">Código de Puesto</label>
+      <input type="text" class="form-control" name="codPuesto" id="codPuesto" value="{{dat.1}}"></input>
+   </div>
+
+   <div class="col-md-6">
+       <label for="idarea" class="form-label">Área de adscripción</label>
+       <select name="idarea" id="idarea" class = "form-select" >
+           <option selected="true" value="{{area.0}}" >{{area.1}}</option>
+            {%
+               for i in catarea
+            %}
+               <option value="{{i.0}}">{{i.1}}</option>
+            {% endfor %}
+       </select>
+
+   </div>
+   <div class="col-md-12">
+      <label for="nomPuesto" class="form-label">Nombre del Puesto</label>
+      <input type="text" class="form-control" name="nomPuesto" id="nomPuesto" value="{{dat.3}}"></input>
+   </div>
+   <div class="col-md-12">
+      <label for="puestoJefeSup" class="form-label">Puesto del Jefe Superior</label>
+      <input type="text" class="form-control" name="puestoJefeSup" id="puestoJefeSup" value="{{dat.4}}" ></input>
+   </div>
+   <div class="col-md-8">
+      <label for="jornada" class="form-label">Jornada</label>
+      <input type="text" class="form-control" name="jornada" id="jornada" value="{{dat.5}}" ></input>
+   </div>
+   <div class="col-md-4">
+      <label for="remunMensual" class="form-label">Remuneración Mensual</label>
+      <input type="text" class="form-control" name="remunMensual" id="remunMensual" value="{{dat.6}}" ></input>
+   </div>
+   <div class="col-md-12">
+      <label for="prestaciones" class="form-label">Prestaciones</label>
+      <input type="text" class="form-control" name="prestaciones" id="prestaciones" value="{{dat.7}}" ></input>
+   </div>
+   <div class="col-md-12">
+      <label for="descripcionGeneral" class="form-label">Descripción General</label>
+      <input type="text" class="form-control" name="descripcionGeneral" id="descripcionGeneral" value="{{dat.8}}" ></input>
+   </div>
+   <div class="col-md-12">
+       <label for="funciones" class="form-label">Funciones</label>
+       <input type="text" class="form-control" name="funciones" id="funciones" value="{{dat.9}}" ></input>
+   </div>
+   <div class="col-md-4">
+       <label for="edad" class="form-label">Edad</label>
+       <input type="text" class="form-control" name="edad" id="edad" value="{{dat.10}}" ></input>
+   </div>
+   <div class="col-md-4">
+        <label for="sexo" class="form-label">Sexo</label>
+        <select name="sexo" id="sexo" class = "form-select">
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+            <option value ="Indistinto">Indistinto</option>
+       </select>
+   </div>
+   <div class="col-md-4">
+        <label for="idestadocivil" class="form-label">Estado Civil</label>
+        <select name="idestadocivil" id="idestadocivil" class = "form-select">
+            {%
+               for i in catEdoCivil
+            %}
+               <option value="{{i.0}}">{{i.1}}</option>
+            {% endfor %}
+       </select>
+
+   </div>
+   <div class="col-md-4">
+        <label for="idescolaridad" class="form-label">escolaridad</label>
+        <select name="idescolaridad" id="idescolaridad" class = "form-select" onChange="miFunc4()">
+        <option selected="true" value="{{escolaridad.0}}" >{{escolaridad.1}}</option>
+            {%
+               for i in catescolaridad
+            %}
+               <option value="{{i.0}}">{{i.1}}</option>
+            {% endfor %}
+       </select>
+       <script>
+           function miFunc4(){
+            var esco = document.getElementById('idescolaridad').value;
+                if (esco == 1)
+                 {document.getElementById('idgrado').disabled=true;
+                 document.getElementById('idgrado').value=false;
+                  document.getElementById('idcarrera').disabled=true;
+                  document.getElementById('idcarrera').value=false;}
+                else
+                 {document.getElementById('idgrado').disabled=false;
+                  document.getElementById('idcarrera').disabled=false;
+                  document.getElementById('idgrado').value=true;
+                  document.getElementById('idcarrera').value=true;}
+            }
+        </script>
+   </div>
+   <div class="col-md-4">
+        <label for="idgrado" class="form-label">Grado Avance</label>
+        <select name="idgrado" id="idgrado" class = "form-select">
+        <option selected="true" value="{{grado.0}}" >{{grado.1}}</option>
+           {%
+               for i in catgrado
+            %}
+               <option value="{{i.0}}">{{i.1}}</option>
+            {% endfor %}
+       </select>
+   </div>
+   <div class="col-md-4">
+        <label for="idcarrera" class="form-label">carrera</label>
+        <select name="idcarrera" id="idcarrera" class = "form-select">
+            {%
+               for i in catcarrera
+            %}
+               <option value="{{i.0}}">{{i.1}}</option>
+            {% endfor %}
+       </select>
+   </div>
+   <div class="col-md-12">
+       <label for="experiencia" class="form-label">Experiencia</label>
+       <input type="text" class="form-control" name="experiencia" id="experiencia" value="{{dat.16}}" ></input>
+   </div>
+   <div class="col-md-12">
+       <label for="conocimientos" class="form-label">Conocimientos</label>
+       <input type="text" class="form-control" name="conocimientos" id="conocimientos" value="{{dat.17}}" ></input>
+
+    </div>
+    <div class="col-md-12">
+        <label for="manejoEquipo" class="form-label">ManejoEquipo</label>
+        <input type="text" class="form-control" name="manejoEquipo" id="manejoEquipo" value="{{dat.18}}" ></input>
+    </div>
+    <div class="col-md-12">
+        <label for="reqFisicos" class="form-label">Requisitos Físicos</label>
+        <input type="text" class="form-control" name="reqFisicos" id="reqFisicos" value="{{dat.19}}" ></input>
+    </div>
+    <div class="col-md-12">
+        <label for="reqPsicologicos" class="form-label">Requisitos Psicológicos</label>
+        <input type="text" class="form-control" name="reqPsicologicos" id="reqPsicologicos" value="{{dat.20}}" ></input>
+    </div>
+    <div class="col-md-12">
+        <label for="responsabilidades" class="form-label">Responsabilidades</label>
+        <input type="text" class="form-control" name="responsabilidades" id="responsabilidades" value="{{dat.21}}" ></input>
+    </div>
+    <div class="col-md-12">
+        <label for="condicionesTrabajo" class="form-label">Condiciones de Trabajo</label>
+        <input type="text" class="form-control" name="condicionesTrabajo" id="condicionesTrabajo" value="{{dat.22}}" ></input>
+    </div>
+    <div class="col-md-12">
+        <label>Seleccione nuevamente idiomas y habilidades requeridas para el perfil de puesto</label>
+    </div>
+    <div class="col-6">
+        <span>Idiomas:</span>
+                    <div class="form-check" >
+                    <input class="form-check-input" type="checkbox" value="" name = "i1" id="i1"  onChange="miFunc5()">
+                    <label class="form-check-label" for="i1">NO REQUERIDO</label>
+                    </div>
+        {% for idio in catidioma
+             if (idio.0)>1: %}
+                    <div class="form-check" >
+                    <input class="form-check-input" type="checkbox" value="" name = "i{{idio.0}}" id="i{{idio.0}}" >
+                    <label class="form-check-label" for="i{{idio.0}}">
+                       {{idio.1}}
+                    </label>
+                    </div>
+         {% endfor %}
+        <script>
+           function miFunc5(){
+           {% for idio in catidioma %}
+           var isChecked = document.getElementById('i1').checked;
+             if ( {{idio.0}}>1 && isChecked ) {
+                  document.getElementById('i{{idio.0}}').disabled=true;
+                  document.getElementById('i{{idio.0}}').checked=false; }
+             else
+                 { document.getElementById('i{{idio.0}}').disabled=false;}
+
+           {% endfor %}
+            }
+        </script>
+    </div>
+   <div class="col-6">
+   <span>Habilidades:</span>
+       <div class="form-check" >
+       <input class="form-check-input" type="checkbox" value="" name = "h1" id="h1"  onChange="miFunc6()">
+       <label class="form-check-label" for="h1">NO REQUERIDAS</label>
+       </div>
+   {% for hab in cathabilidades
+       if (hab.0)>1: %}
+      <div class="form-check">
+      <input class="form-check-input" type="checkbox"  name ="h{{hab.0}}"  id="h{{hab.0}}">
+      <label class="form-check-label" for="h{{hab.0}}">
+          {{hab.1}}
+      </label>
+      </div>
+   {% endfor %}
+     <script>
+           function miFunc6(){
+           {% for hab in cathabilidades %}
+           var isChecked = document.getElementById('h1').checked;
+             if ( {{hab.0}}>1 && isChecked ) {
+                  document.getElementById('h{{hab.0}}').disabled=true;
+                  document.getElementById('h{{hab.0}}').checked=false; }
+             else
+                 { document.getElementById('h{{hab.0}}').disabled=false;}
+
+           {% endfor %}
+            }
+        </script>
+
+  </div>
+
+
+
+
+   <div class="col-md-12">
+          <button type="submit" class="btn btn-danger">Enviar</button>
+    </div>
+</form>
+</footer>
+<footer>
+    <p>© 2022 Cetis 155 Informatica Todos los derechos reservados.</p>
+</footer>
+{% endblock %}

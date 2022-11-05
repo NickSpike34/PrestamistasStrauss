@@ -1,0 +1,85 @@
+<!Doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prestamistas Strauss</title>
+    <link rel="shortcut icon" href="/static/Imagenes/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos3.css">
+    </head>
+    <body>
+        <div id="particles-js"></div>
+        <header>
+            <nav class="navegacion">
+                <ul class="menu">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/personal">Nosotros</a></li>
+                    <li><a>Servicios</a>
+                        <ul class="submenu">
+                          <li><a href="/area ">Area</a></li>
+                          <li><a href="/escolaridad">Escolaridad</a></li>
+                          <li><a href="/estadocivil">Estado Civil</a></li>
+                          <li><a href="/carrera">Carrera</a></li>
+                          <li><a href="/grado">Grado de Avance</a></li>
+                          <li><a href="/habilidades">Habilidades</a></li>
+                          <li><a href="/idioma">Idioma</a></li>
+                          <li><a href="/medio">Medio de publicidad</a></li>
+                          <li><a href="/documentos">Documentos Solicitados</a></li>
+                          <li><a href="/puesto">Puesto</a></li>
+                          <li><a>Requisicion</a>
+                          <ul>
+              <li><a href="/req_agregar">Nueva Requisicion</a></li>
+              <li><a href="/pendientes">Pendientes de autorizacion</a></li>
+              <li><a href="/autorizadas">Autorizadas</a></li>
+							</ul>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </body>
+    <!-- JS Particles.js -->
+    <script src="/static/js/particles.min.js"></script>
+    <script src="/static/js/app.js"></script>
+
+    <!-- JS FontAwesome -->
+    <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<footer>
+   <div class="container">
+
+<h3>
+   <CENTER> <b> Pendientes </b> </CENTER>
+
+</h3>
+
+  <br>
+<form class="row g-3"  action="/req_fedita/{{dat.0}}" method="post">
+   <div class="col-md-6">
+      <label for="folio" class="form-label">Folio</label>
+      <input type="text" class="form-control" name="folio" id="folio" value="{{dat.1}}" disabled></input>
+   </div>
+
+   <div class="col-md-6">
+      <label for="nomPuesto" class="form-label">Puesto Vacante</label>
+      <input type="text" class="form-control" name="nomPuesto" id="nomPuesto" value="{{dat.2}}" disabled></input>
+   </div>
+   <div class="col-md-12">
+      <label for="nomRevisa" class="form-label">Revisado por:</label>
+      <input type="text" class="form-control" name="nomRevisa" id="nomRevisa" value="{{dat.3}}" ></input>
+   </div>
+   <div class="col-md-12">
+      <label for="nomAutoriza" class="form-label">Autorizado por:</label>
+      <input type="text" class="form-control" name="nomAutoriza" id="nomAutoriza" value="{{dat.4}}" ></input>
+   </div>
+
+
+
+   <div class="col-md-12">
+        <label for="autorizada" class="form-label"></label>
+        <button type="submit" class="btn btn-danger" name="autorizada" id="autorizada" value="1">Enviar</button>
+    </div>
+</form>
+</footer>
+<footer>
+    <p>© 2022 Cetis 155 Informatica Todos los derechos reservados.</p>
+</footer>

@@ -1,0 +1,151 @@
+
+
+
+.menu > li{
+	position: relative;
+	display: inline-block;
+    color:#fff ;
+    
+}
+
+.menu > li > a{
+	display: block;
+	padding: 15px 20px;
+	color:rgb(255, 255, 255) ;
+	font-family: 'Open sans';
+	text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu li a:hover{
+	color: #fffefe;
+	transition: all .3s;
+}
+
+ul, ol {
+    list-style:none;
+}
+
+.navegacion > li {
+    float:left;
+}
+
+.navegacion li a {
+    background-color:#000;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+}
+
+.navegacion li a:hover {
+    background-color:#434343;
+}
+
+.navegacion li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.navegacion li:hover > ul {
+    display:block;
+}
+
+.navegacion li ul li {
+    position:relative;
+}
+
+.nav li ul li ul {
+    right:-140px;
+    top:0px;
+}
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: #333333;
+	width: 120%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+}
+
+.submenu li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+    background: #000000;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url(/static/Imagenes/fondo3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#particles-js {
+	height: 100vh; 
+	width: 110%;
+    position: fixed;
+    z-index: -1;
+}
+
+header, .main, footer{
+    width: 90%;
+    margin: 1% auto;
+    z-index: 99;
+}
+
+header nav ul {
+    list-style: none;
+}
+header nav ul li{
+    float: left;
+}
+header nav ul li a{
+    padding: 10px 20px;
+    display:block;
+    color:#fff ;
+    text-decoration: none;
+    background: #000000;
+
+}
+header nav ul li a:hover{
+    background: #4d4b49;
+}
+.main .articles{
+    width:100%; 
+    margin-right: 100%;
+    float:left;
+}
+.main .articles article{
+    padding: 20px;
+    background: #C2C2C2;
+    margin-bottom: 20px;
+}
+
+footer{
+    background: #2e2e2e;
+    color: #fff;
+    clear: both;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.main article{
+    background: #C2C2C2;
+}

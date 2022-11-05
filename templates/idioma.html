@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+            
+           <footer>
+                        <table width="100%" border="1" cellpadding="0" bordercolor="#000000">
+                    <tbody>
+                    <tr>
+                    <td color="FFFFFF" bgcolor="#A6A6A6" valign="top">
+                    <right><h3><a href="/formularioidioma">Agregar Datos</a></h3></right>
+                    <table width="100%" border="1" cellpadding="0" bordercolor="#000000">
+                    <thead>
+                      <tr>
+                        <td color="white" bgcolor="#FF0000">Descripcion</td>
+                        <td color="white" bgcolor="#666666"></td>
+                        <td color="white" bgcolor="#666666"></td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in descripcionidioma %}
+                        <tr>
+                        </td>
+                        <td width="48%">
+                           {{i.1}}
+                        </td>
+                        <td bgcolor="#379146" width="8%">
+                        <center><a href="/editaridioma/{{i.0}}" style="...">Editar</a></center>
+                        </td>
+                        <td bgcolor="#379146" width="8%">
+                        <center><a href="/borraridioma/{{i.0}}" style="...">Borrar</a></center>
+                        </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    </table>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </footer>
+            <footer>
+            <footer>
+                <p>© 2022 Cetis 155 Informatica Todos los derechos reservados.</p>
+            </footer>
+            <!-- JS Particles.js -->
+    <script src="/static/js/particles.min.js"></script>
+    <script src="/static/js/app.js"></script>
+
+    <!-- JS FontAwesome -->
+    <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+        </body>
+        {% endblock %}
+</html>

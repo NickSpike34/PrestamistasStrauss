@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+            <section class="main">
+                <section class="articles">
+                    <article>
+                        <h2>Añadir Estado Civil</h2>
+
+                       </p>
+                    </article>
+                    <article>
+                        <left>
+                            <form action="/agrega_estadocivil" method="post">
+                               <div class="container">
+                                      <div class="form-row">
+                                           <div class="col-xs-12 ">
+                                            <div class="mb-3">
+                                                  <label for="descripcionestadocivil" class="form-label">Escribe la descripcion</label>
+                                                  <input type="text" class="form-control" name="descripcionestadocivil" id="descripcionestadocivil"></input>
+                                            </div>
+                                            </div>
+                                      </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </form>
+                        </left>
+                    </article>
+                </section>
+            </section>
+            <footer>
+                <p>© 2022 Cetis 155 Informatica Todos los derechos reservados.</p>
+            </footer>
+            <!-- JS Particles.js -->
+    <script src="/static/js/particles.min.js"></script>
+    <script src="/static/js/app.js"></script>
+
+    <!-- JS FontAwesome -->
+    <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+        </body>
+        {% endblock %}
+</html>
