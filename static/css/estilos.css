@@ -1,6 +1,5 @@
 
 
-
 .menu > li{
 	position: relative;
 	display: inline-block;
@@ -60,6 +59,43 @@ ul, ol {
     right:-140px;
     top:0px;
 }
+
+/* iconos */
+.social-bar {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;    
+}
+
+.icon {
+    color: white;
+    text-decoration: none;
+    padding: .7rem;
+    display: flex;
+    transition: all .5s;
+}
+
+.icon-youtube {
+    background: red;
+    border-radius: 1rem 0 0 0;
+}
+
+.icon-instagram {
+    background: #3F60A5;
+    border-radius: 0 0 0 1rem;
+}
+
+.icon:hover {
+    padding-right: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
+}
+
 
 /* Submenu*/
 
